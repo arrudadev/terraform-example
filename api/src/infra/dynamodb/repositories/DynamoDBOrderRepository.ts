@@ -12,7 +12,7 @@ import { dynamoDBClient } from '../DynamoDBClient'
 import { OrderEntityToDynamoRecordMapper } from '../mappers/OrderEntityToDynamoRecordMapper'
 import { DynamoRecordToOrderEntityMapper } from '../mappers/DynamoRecordToOrderEntityMapper'
 
-export class OrderRepository implements IOrderRepository {
+export class DynamoDBOrderRepository implements IOrderRepository {
   async save(order: Order): Promise<void> {
     const command = new PutItemCommand({
       TableName: 'Orders',

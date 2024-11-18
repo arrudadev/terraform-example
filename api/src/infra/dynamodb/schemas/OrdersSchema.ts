@@ -14,7 +14,7 @@ export class OrdersSchema {
   private props!: OrdersSchemaProps
 
   constructor(props: OrdersSchemaProps) {
-    Object.assign(this.props, props)
+    this.props = props
   }
 
   get PK() {

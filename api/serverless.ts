@@ -1,6 +1,8 @@
 import type { AWS } from '@serverless/typescript'
 
-export const config: AWS = {
+import * as functions from './src/infra/lambdas'
+
+const config: AWS = {
   org: 'arrudadev',
   app: 'terraform-example',
   service: 'lambdas',
@@ -15,4 +17,8 @@ export const config: AWS = {
     individually: true,
     excludeDevDependencies: true,
   },
+  functions,
+  plugins: ['serverless-esbuild', 'serverless-offline'],
 }
+
+export = config

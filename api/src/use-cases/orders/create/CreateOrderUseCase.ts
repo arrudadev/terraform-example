@@ -1,6 +1,6 @@
 import { CustomerProps } from '@/domain/orders/entities/Customer'
 import { OrderItemProps } from '@/domain/orders/entities/OrderItem'
-import { OrderCreatedEvent } from '@/domain/orders/events/OrderCreatedEvent'
+import { IOrderCreatedEvent } from '@/domain/orders/events/OrderCreatedEvent'
 import { OrderFactory } from '@/domain/orders/factories/OrderFactory'
 import { IOrderRepository } from '@/domain/orders/repositories/OrderRepository'
 
@@ -12,7 +12,7 @@ export type CreateOrderDTO = {
 export class CreateOrderUseCase {
   constructor(
     private orderRepository: IOrderRepository,
-    private orderCreatedEvent: OrderCreatedEvent,
+    private orderCreatedEvent: IOrderCreatedEvent,
   ) {}
 
   async execute(inputDTO: CreateOrderDTO) {
